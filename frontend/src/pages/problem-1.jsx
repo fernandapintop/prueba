@@ -30,7 +30,6 @@ const validInput = function (lines) {
     cq,
     obstacles: obstaclesArray,
   };
-  console.log(dataTosend);
   return dataTosend;
 };
 
