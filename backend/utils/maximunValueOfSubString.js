@@ -14,7 +14,6 @@ const maximunValueOfSubString = function (t) {
   return maxF;
 };
 
-// Función para contar ocurrencias de una subcadena en la cadena dada
 function countOccurrences(mainString, subString) {
   let count = 0;
   let lastIndex = -1;

@@ -1,5 +1,6 @@
 import "./problem-1.css";
 import { useState } from "react";
+import { Link } from "react-router-dom";
 
 const validInput = function (lines) {
   const linesLength = lines.length;
@@ -61,12 +62,10 @@ const Problem1 = function () {
       if (response.ok) {
         const responseData = await response.json();
         setOutputValue(responseData.data);
-        console.log("queens attack:", responseData.data);
       }
       if (response.status === 400) {
         const responseData = await response.json();
         setOutputValue(responseData.error);
-        console.log(responseData.error);
       }
     } catch (error) {
       console.log(error);
@@ -74,23 +73,30 @@ const Problem1 = function () {
   };
 
   return (
-    <div className="problem1-form-box">
-      <h1>Problem #1</h1>
-      <form onSubmit={handleSubmit}>
-        <label>Put the values here</label>
-        <textarea
-          id="input-1"
-          value={InputValue}
-          onChange={handleInputChange}
-          placeholder="enter the data here"
-          rows={10}
-          cols={50}
-        ></textarea>
-        <p>Queens Attack</p>
-        <pre id="output-1">{outputValue}</pre>
-        <button type="submit">Send Data</button>
-      </form>
-    </div>
+    <>
+      <div className="problem1-form-box">
+        <h1>Problem #1</h1>
+        <form className="problem1-form" onSubmit={handleSubmit}>
+          <label>Put the values here</label>
+          <textarea
+            id="input-1"
+            value={InputValue}
+            onChange={handleInputChange}
+            placeholder="enter the data here"
+            rows={10}
+            cols={50}
+          ></textarea>
+          <p>Queens Attack</p>
+          <pre className="output-1" id="output-1">
+            {outputValue}
+          </pre>
+          <button type="submit">Send Data</button>
+        </form>
+      </div>
+      <Link className="link" to={"/"}>
+        Volver a inicio &rarr;
+      </Link>
+    </>
   );
 };
 

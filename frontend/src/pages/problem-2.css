@@ -1,4 +1,4 @@
-.problem1-form-box {
+.problem2-form-box {
   display: flex;
   align-items: center;
   height: max-content;
@@ -11,19 +11,19 @@
   box-shadow: 12px 17px 51px rgba(0, 0, 0, 0.22);
   backdrop-filter: blur(6px);
   background: rgba(217, 217, 217, 0.58);
-  margin-bottom: 10px;
+  margin-bottom: 20px;
 }
 
-.problem1-form {
+.problem2-form {
   display: flex;
   flex-direction: column;
   gap: 10px;
 }
 
-.output-1 {
+.output {
   background-color: cornsilk;
   height: 40px;
-  width: 70%;
+  width: min(30%, max-content);
   background-color: rgba(217, 217, 217, 0.58);
   color: black;
   border: 2px solid white;
@@ -33,10 +33,6 @@
   align-content: center;
   justify-content: center;
   align-items: center;
-  font-size: 15px;
+  font-size: 25px;
   padding: 5px;
-}
-
-.link {
-  color: black;
 }
