@@ -1,4 +1,4 @@
-# Usar una imagen de Node.js como base
+# Etapa de construcción
 FROM node:latest as build
 
 # Establecer el directorio de trabajo en /app
@@ -10,14 +10,21 @@ COPY package*.json ./
 # Instalar las dependencias
 RUN npm install
 
-# Copiar el resto del código fuente
+# Copiar el código fuente
 COPY . .
 
-# Construir la aplicación React
+# Construir la aplicación Vite para producción
 RUN npm run build
 
-# Configurar el servidor web de producción
+# Etapa de producción
 FROM nginx:alpine
-COPY --from=build /app/build /usr/share/nginx/html
+
+# Copiar los archivos estáticos generados durante la etapa de construcción
+COPY --from=build /app/dist /usr/share/nginx/html
+
+# Exponer el puerto 80
 EXPOSE 80
+
+# Comando predeterminado para ejecutar Nginx en primer plano
 CMD ["nginx", "-g", "daemon off;"]
+
