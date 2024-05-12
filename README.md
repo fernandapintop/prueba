@@ -8,7 +8,7 @@ Este proyecto consta de una aplicación web que tiene una parte frontend y una p
 
 1. **Clonar el repositorio:** 
    Clona este repositorio en tu máquina local utilizando el siguiente comando:
-git clone <URL_del_repositorio>
+git clone https://github.com/fernandapintop/prueba.git
 
 
 2. **Instalar dependencias:**
