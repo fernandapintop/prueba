@@ -1,6 +1,8 @@
 # Proyecto Fernanda Pinto Test
 
-¡Bienvenido al proyecto XYZ!
+¡Bienvenido al proyecto !
+
+#IMPORTANTE TENER INSTALADO NODE
 
 Este proyecto consta de una aplicación web que tiene una parte frontend y una parte backend. A continuación se detallan los pasos para configurar y ejecutar el proyecto en tu máquina local.
 
