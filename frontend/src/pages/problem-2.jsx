@@ -2,6 +2,8 @@ import { useState } from "react";
 import "./problem-2.css";
 import { Link } from "react-router-dom";
 
+const backendUrl = import.meta.env.VITE_BACKEND_URL || "http://localhost:3000";
+
 const Problem2 = function () {
   const [inputValue, setInputValue] = useState("");
   const [outputValue, setOutputValue] = useState("");
@@ -16,7 +18,7 @@ const Problem2 = function () {
     const data = { t: inputValue };
 
     try {
-      const response = await fetch("http://localhost:3000/problem-2", {
+      const response = await fetch(`${backendUrl}/api/problem-2`, {
         method: "POST",
         headers: {
           "Content-Type": "application/json",

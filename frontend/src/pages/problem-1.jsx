@@ -2,6 +2,8 @@ import "./problem-1.css";
 import { useState } from "react";
 import { Link } from "react-router-dom";
 
+const backendUrl = import.meta.env.VITE_BACKEND_URL || "http://localhost:3000";
+
 const validInput = function (lines) {
   const linesLength = lines.length;
   const line1 = lines[0];
@@ -51,7 +53,7 @@ const Problem1 = function () {
     const data = validInput(lines);
 
     try {
-      const response = await fetch("http://localhost:3000/problem-1", {
+      const response = await fetch(`${backendUrl}/api/problem-1`, {
         method: "POST",
         headers: {
           "Content-Type": "application/json",

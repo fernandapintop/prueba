@@ -23,7 +23,7 @@
 .output {
   background-color: cornsilk;
   height: 40px;
-  width: min(30%, max-content);
+  width: min(40%, max-content);
   background-color: rgba(217, 217, 217, 0.58);
   color: black;
   border: 2px solid white;
